@@ -32,7 +32,8 @@ void initialize() {
 	backRight.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 	frontRight.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 
-		lift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+	lift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+	clamp.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
 }
 
 /**

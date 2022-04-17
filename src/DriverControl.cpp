@@ -2,10 +2,10 @@
 #include "main.h"
 
 void setDrive(int left, int right){
-  backLeft = left;
-  frontLeft = left;
-  frontRight = right;
-  backRight = right;
+  backLeft.move_voltage(left);
+  frontLeft.move_voltage(left);
+  frontRight.move_voltage(right);
+  frontRight.move_voltage(right);
 }
 
 void setMotors() {
@@ -32,13 +32,29 @@ void setMotors() {
 void moveLift() {
   bool getLiftUp = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1);
   bool getLiftDown = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2);
-  const int liftVelocity = 100;
+  const int liftSpeed = 100;
 
   if(getLiftUp) {
-    lift = liftVelocity;
+    lift = liftSpeed;
   }
   else if(getLiftDown) {
-    lift = -liftVelocity;
+    lift = -liftSpeed;
+  }
+  else {
+    lift = 0;
+  }
+}
+
+void moveClamp() {
+  bool getClampUp = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1);
+  bool getClampDown = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2);
+  const int clampSpeed = 100;
+
+  if(getClampUp) {
+    lift = clampSpeed;
+  }
+  else if(getClampDown) {
+    lift = -clampSpeed;
   }
   else {
     lift = 0;

@@ -7,5 +7,7 @@ pros::Motor frontLeft(3, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_
 pros::Motor backLeft(4, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 
 pros::Motor lift(5, pros::E_MOTOR_GEARSET_18, true, pros::E_MOTOR_ENCODER_ROTATIONS);
+pros::Motor clamp(10,pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 
+//CONTROLLER
 pros::Controller controller(pros::E_CONTROLLER_MASTER);

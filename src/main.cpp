@@ -33,7 +33,7 @@ void initialize() {
 	frontRight.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 
 	lift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
-	clamp.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+	clamp.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 }
 
 /**
@@ -81,24 +81,11 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-	pros::Controller master(pros::E_CONTROLLER_MASTER);
-	pros::Motor left_mtr(1);
-	pros::Motor right_mtr(2);
 
-	while (true) {
-		pros::lcd::print(0, "%d %d %d", (pros::lcd::read_buttons() & LCD_BTN_LEFT) >> 2,
-		                 (pros::lcd::read_buttons() & LCD_BTN_CENTER) >> 1,
-		                 (pros::lcd::read_buttons() & LCD_BTN_RIGHT) >> 0);
-		int left = master.get_analog(ANALOG_LEFT_Y);
-		int right = master.get_analog(ANALOG_RIGHT_Y);
-
-		left_mtr = left;
-		right_mtr = right;
-		pros::delay(20);
-	}
 	while (true){
 		setMotors();
 		moveLift();
+		moveClamp();
 		pros::delay(10);
 	}
 

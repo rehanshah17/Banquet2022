@@ -2,18 +2,18 @@
 #include "main.h"
 
 void setDrive(int left, int right){
-  backLeft.move_voltage(left);
-  frontLeft.move_voltage(left);
-  frontRight.move_voltage(right);
-  frontRight.move_voltage(right);
+  backLeft = left;
+  frontLeft = left;
+  backRight = right;
+  frontRight = right;
 }
 
 void setMotors() {
     //left -- drive
     //right -- turn
 
-  double power = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-  double direction = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
+  double power = 2 * controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+  double direction = 1.5 * controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 
   int left = power + direction;
   int right = power - direction;
@@ -35,10 +35,10 @@ void moveLift() {
   const int liftSpeed = 100;
 
   if(getLiftUp) {
-    lift = liftSpeed;
+    lift = -liftSpeed;
   }
   else if(getLiftDown) {
-    lift = -liftSpeed;
+    lift = liftSpeed;
   }
   else {
     lift = 0;
@@ -46,17 +46,17 @@ void moveLift() {
 }
 
 void moveClamp() {
-  bool getClampUp = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1);
-  bool getClampDown = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2);
-  const int clampSpeed = 100;
+  bool getClampUp = controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1);
+  bool getClampDown = controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2);
+  const int clampSpeed = 50;
 
   if(getClampUp) {
-    lift = clampSpeed;
+    clamp = clampSpeed;
   }
   else if(getClampDown) {
-    lift = -clampSpeed;
+    clamp = -clampSpeed;
   }
   else {
-    lift = 0;
+    clamp = 0;
   }
 }

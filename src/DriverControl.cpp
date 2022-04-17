@@ -9,8 +9,8 @@ void setDrive(int left, int right){
 }
 
 void setMotors() {
-//  left -- drivey
-//  right -- turney
+    //left -- drive
+    //right -- turn
 
   double power = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
   double direction = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
@@ -18,24 +18,27 @@ void setMotors() {
   int left = power + direction;
   int right = power - direction;
 
+    //deadzones
   if (abs(power) <= 20)
     setDrive(0, 0);
   if (abs(direction) <= 20)
     setDrive(0, 0);
 
+    //set motor power
   setDrive(left, right);
 }
 
 
-void moveLift(){
-  bool up  = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1);
-  bool down = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2);
+void moveLift() {
+  bool getLiftUp = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1);
+  bool getLiftDown = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2);
+  const int liftVelocity = 100;
 
-  if (up) {
-    lift = 100;
+  if(getLiftUp) {
+    lift = liftVelocity;
   }
-  else if (down) {
-    lift = -100;
+  else if(getLiftDown) {
+    lift = -liftVelocity;
   }
   else {
     lift = 0;

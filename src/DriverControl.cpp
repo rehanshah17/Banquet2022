@@ -1,6 +1,8 @@
 //hella drivey
 #include "main.h"
 
+bool clamped = false;
+
 void setDrive(int left, int right){
   backLeft = left;
   frontLeft = left;
@@ -50,11 +52,17 @@ void moveClamp() {
   bool getClampDown = controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2);
   const int clampSpeed = 50;
 
-  if(getClampUp) {
-    clamp = clampSpeed;
+  okapi::Motor clamp(10);
+  if(getClampUp && clamped) {
+    clamped = false;
+    clamp.moveRelative(0.8, 100);
+    pros::delay(90);
+
   }
-  else if(getClampDown) {
-    clamp = -clampSpeed;
+  if(getClampDown && !clamped) {
+    clamped = true;
+    clamp.moveRelative(-0.8, 100);
+    pros::delay(90);
   }
   else {
     clamp = 0;

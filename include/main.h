@@ -78,6 +78,8 @@ void opcontrol(void);
 
  #include "globals.hpp"
  #include "DriverControl.hpp"
+ #include "autonControl.hpp"
+ #include "auton.hpp"
 //#include <iostream
 #endif
 

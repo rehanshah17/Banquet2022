@@ -1,5 +1,5 @@
 //drive
-void setDrive();
+void setDrive(int left, int right);
 
 void setMotors();
 

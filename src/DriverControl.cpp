@@ -34,7 +34,7 @@ void setMotors() {
 void moveLift() {
   bool getLiftUp = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1);
   bool getLiftDown = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2);
-  const int liftSpeed = 100;
+  const int liftSpeed = 127;
 
   if(getLiftUp) {
     lift = -liftSpeed;

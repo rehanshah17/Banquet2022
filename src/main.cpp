@@ -86,6 +86,7 @@ void opcontrol() {
 		setMotors();
 		moveLift();
 		moveClamp();
+		moveBackLift();
 		pros::delay(10);
 	}
 

@@ -5,4 +5,7 @@ void setMotors();
 
 //moving clamp and lift
 void moveLift();
+
 void moveClamp();
+
+void moveBackLift();

@@ -39,16 +39,19 @@ void moveLift() {
 
   if(getLiftUp) {
     lift = -liftSpeed;
+    lift2 = -liftSpeed;
   }
   else if(getLiftDown) {
     lift = liftSpeed;
+    lift2 = liftSpeed;
   }
   else {
     lift = 0;
+    lift2 = 0;
   }
 }
 
-void moveClamp() {
+void moveClamp() {//a
   bool getClampUp = controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1);
   bool getClampDown = controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2);
   const int clampSpeed = 50;
@@ -67,5 +70,21 @@ void moveClamp() {
   }
   else {
     clamp = 0;
+  }
+}
+  void moveBackLift() {
+    bool getBackLiftUp = controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1);
+    bool getBackLiftDown = controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2);
+    const int backLiftSpeed = 127;
+
+    if(getBackLiftUp) {
+      backLift = -backLiftSpeed;
+    }
+    else if(getBackLiftDown) {
+      backLift = backLiftSpeed;
+    }
+    else {
+      backLift = 0;
+
   }
 }

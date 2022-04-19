@@ -2,5 +2,5 @@
 
 void progSkills() {
   translate(200, 80);
-  
+
 }

@@ -1,6 +1,7 @@
 //hella drivey
 #include "main.h"
 
+//STATE VARIABLES
 bool clamped = false;
 
 void setDrive(int left, int right){
@@ -53,14 +54,14 @@ void moveClamp() {
   const int clampSpeed = 50;
 
   okapi::Motor clamp(10);
-  if(getClampUp && clamped) {
-    clamped = false;
+  if(getClampUp && !clamped) {
+    clamped = true;
     clamp.moveRelative(0.8, 100);
     pros::delay(90);
 
   }
-  if(getClampDown && !clamped) {
-    clamped = true;
+  if(getClampDown && clamped) {
+    clamped = false;
     clamp.moveRelative(-0.8, 100);
     pros::delay(90);
   }

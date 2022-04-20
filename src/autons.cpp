@@ -1,6 +1,7 @@
 #include "main.h"
 
-void progSkills() {
-  translate(200, 80);
 
+void progSkills() {
+  pidTranslate(500.0, 127);
+  //translate(10, 127);
 }

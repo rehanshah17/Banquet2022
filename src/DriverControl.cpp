@@ -38,12 +38,12 @@ void moveLift() {
   const int liftSpeed = 127;
 
   if(getLiftUp) {
-    lift = -liftSpeed;
-    lift2 = -liftSpeed;
-  }
-  else if(getLiftDown) {
     lift = liftSpeed;
     lift2 = liftSpeed;
+  }
+  else if(getLiftDown) {
+    lift = -liftSpeed;
+    lift2 = -liftSpeed;
   }
   else {
     lift = 0;
@@ -57,10 +57,10 @@ void moveClamp() {//a
   const int clampSpeed = 50;
 
   if(getClampUp) {
-    clamp = -clampSpeed;
+    clamp = clampSpeed;
   }
   else if(getClampDown) {
-    clamp = clampSpeed;
+    clamp = -clampSpeed;
   }
   else {
     clamp = 0;
@@ -87,10 +87,10 @@ void moveClamp() {//a
     const int backLiftSpeed = 127;
 
     if(getBackLiftUp) {
-      backLift = -backLiftSpeed;
+      backLift = backLiftSpeed;
     }
     else if(getBackLiftDown) {
-      backLift = backLiftSpeed;
+      backLift = -backLiftSpeed;
     }
     else {
       backLift = 0;

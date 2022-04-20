@@ -80,6 +80,7 @@ void opcontrol(void);
  #include "DriverControl.hpp"
  #include "autonControl.hpp"
  #include "auton.hpp"
+ #include "pid.hpp"
 //#include <iostream
 #endif
 

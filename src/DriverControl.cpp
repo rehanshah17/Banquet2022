@@ -51,7 +51,7 @@ void moveLift() {
   }
 }
 
-void moveClamp() {//a
+void moveClamp() {
   bool getClampUp = controller.get_digital(pros::E_CONTROLLER_DIGITAL_A);
   bool getClampDown = controller.get_digital(pros::E_CONTROLLER_DIGITAL_B);
   const int clampSpeed = 50;
@@ -65,15 +65,15 @@ void moveClamp() {//a
   else {
     clamp = 0;
   }
-  /*okapi::Motor clamp(10);
-  if(getClampUp && !clamped) {
-    clamped = true;
-    clamp.moveRelative(0.8, 100);
+  /*okapi::Motor clamp(17);
+  if(getClampUp &&clamped) {
+    clamped = false;
+    clamp.moveRelative(0.8, -100);
     pros::delay(90);
 
   }
-  if(getClampDown && clamped) {
-    clamped = false;
+  if(getClampDown && !clamped) {
+    clamped = true;
     clamp.moveRelative(-0.8, 100);
     pros::delay(90);
   }

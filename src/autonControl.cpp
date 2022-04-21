@@ -10,9 +10,11 @@ void resetMotorEncoders() {
 double getRightEncoder() {
   return (fabs(backRight.get_position()) + fabs(frontRight.get_position())) / 2;
 }
+
 double getLeftEncoder() {
   return (fabs(frontLeft.get_position()) + fabs(backLeft.get_position())) / 2;
 }
+
 double getAvgEncoder() {
   return (fabs(backRight.get_position()) + fabs(backLeft.get_position()) +
          fabs(frontRight.get_position()) + fabs(frontLeft.get_position())) / 4;

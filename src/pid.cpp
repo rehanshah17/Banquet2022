@@ -1,6 +1,6 @@
 #include "main.h"
 
-double kP = 0.01;
+double kP = 0.1;
 double kI = 0.0;
 double kD = 0.0;
 

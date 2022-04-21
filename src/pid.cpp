@@ -1,8 +1,8 @@
 #include "main.h"
 
-double kP = 0.225;
+double kP = 0.2;
 double kI = 0.0;
-double kD = 0.0;
+double kD = 0.1;
 
 void pidTranslate(double units, int maxV) {
   double direction = abs(units) / units;
@@ -16,7 +16,7 @@ void pidTranslate(double units, int maxV) {
 
   resetMotorEncoders();
 
-  while(getAvgEncoder() < abs(units)) {
+  while(getAvgEncoder() < (abs(units)-360)) {
     err = abs(units) - getAvgEncoder();
 
     proportion = err;

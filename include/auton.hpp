@@ -1,8 +1,10 @@
 #include "main.h"
 
-void right();
+void right20();
 
-void clampDown(int degree);
+void right40();
+
+void clampMove(int degree);
 
 void left();
 

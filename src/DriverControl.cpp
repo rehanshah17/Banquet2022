@@ -87,10 +87,10 @@ void moveClamp() {
     const int backLiftSpeed = 127;
 
     if(getBackLiftUp) {
-      backLift = backLiftSpeed;
+      backLift = -backLiftSpeed;
     }
     else if(getBackLiftDown) {
-      backLift = -backLiftSpeed;
+      backLift = backLiftSpeed;
     }
     else {
       backLift = 0;

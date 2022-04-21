@@ -21,6 +21,8 @@ double getAvgEncoder() {
 }
 
 
+
+
 void translate(int units, int voltage) {
    int direction = abs(units) / units;
 
@@ -81,3 +83,14 @@ void swingRight(int units, int voltage) {
 
    setDrive(0, 0);
 }
+
+void clampDownO(int units, int voltage){
+  int direction = abs(units) / units;
+
+  resetMotorEncoders();
+
+  while(getAvgEncoder() < abs(units)) {
+      clamp = voltage * direction;
+      pros::delay(10);
+    }
+  }

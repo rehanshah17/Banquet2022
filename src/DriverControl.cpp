@@ -5,18 +5,18 @@
 bool clamped = false;
 
 void setDrive(int left, int right){
-  backLeft = left;
-  frontLeft = left;
-  backRight = right;
-  frontRight = right;
+  backLeft.move_voltage(left * 70);
+  frontLeft.move_voltage(left * 70);
+  backRight.move_voltage(right * 70);
+  frontRight.move_voltage(right * 70);
 }
 
 void setMotors() {
     //left -- drive
     //right -- turn
 
-  double power = 2 * controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
-  double direction = 1.5 * controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
+  double power =  controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
+  double direction = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
 
   int left = power + direction;
   int right = power - direction;

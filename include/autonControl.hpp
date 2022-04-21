@@ -8,3 +8,5 @@ void translate(int units, int voltage);
 void turn(int units, int voltage);
 void swingLeft(int units, int voltage);
 void swingRight(int units, int voltage);
+void clampDownO(int units, int voltage);
+void clampDownE();

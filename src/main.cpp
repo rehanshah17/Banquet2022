@@ -27,10 +27,10 @@ void initialize() {
 	pros::lcd::set_text(1, "Hello g User!");
 
 	pros::lcd::register_btn1_cb(on_center_button);
-	backLeft.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
-	frontLeft.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
-	backRight.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
-	frontRight.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+	backLeft.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+	frontLeft.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+	backRight.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+	frontRight.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
 
 	lift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 	clamp.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
@@ -89,10 +89,10 @@ void opcontrol() {
 		moveLift();
 		moveClamp();
 		moveBackLift();
-		backLeft.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
-		frontLeft.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
-		backRight.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
-		frontRight.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+		backLeft.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+		frontLeft.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+		backRight.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+		frontRight.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
 
 		lift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 		clamp.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);

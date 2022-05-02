@@ -24,7 +24,7 @@ void on_center_button() {
  */
 void initialize() {
 	pros::lcd::initialize();
-	pros::lcd::set_text(1, "Hello g User!");
+	pros::lcd::set_text(1, "Tournament Winners ;)");
 
 	pros::lcd::register_btn1_cb(on_center_button);
 	backLeft.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);

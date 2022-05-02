@@ -15,5 +15,6 @@
 - Auton Drive control includes
     - 1 Auton made with : premade okapi library methods
     - Methods made with Okapi motor declation
+    - PD controller that is utilized in the auton methods
 
 #Rehan Shah 750C

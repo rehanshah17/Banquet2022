@@ -17,8 +17,11 @@ void right40(){
   pros::delay(100);
   pidTranslate(-765,127);
   clampMove(90);
+  translate(100,127);
   turn(-110,127);
-  pidTranslate(250,127);
+  pidTranslate(350,127);
+  clampMove(-90);
+  pidTranslate(-700,127);
 
 
 }
